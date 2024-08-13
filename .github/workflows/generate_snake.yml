@@ -1,0 +1,28 @@
+name: Generate Snake Game
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Generate Snake animation
+        uses: Platane/snk/svg@v2
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: dist/snake.svg
+
+      - name: Commit and push the generated snake.svg
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: dist/snake.svg
+          message: "Generate new Snake animation"
+          author_name: ${{ github.actor }}
+          author_email: ${{ github.actor }}@users.noreply.github.com
+          push: true
