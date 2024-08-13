@@ -54,5 +54,7 @@
  <img height = "200em" src="https://github-readme-stats.vercel.app/api?username=wagnersantos6&show_icons=true&show_icons=true&theme=vue-dark&count_private=true"/>
 </div>
 
+---
 
+# ![snake gif](https://github.com/wagnersantos6/wagnersantos6/blob/output/github-contribution-grid-snake.gif)
 
